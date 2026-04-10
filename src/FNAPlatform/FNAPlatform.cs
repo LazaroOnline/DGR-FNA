@@ -189,6 +189,8 @@ namespace Microsoft.Xna.Framework
 				GameControllerTypeForIndex = SDL3_FNAPlatform.GameControllerTypeForIndex;
 
 
+				WrapWindow =			SDL3_FNAPlatform.WrapWindow;
+				UnwrapWindow =			SDL3_FNAPlatform.UnwrapWindow;
 			}
 			else
 			{
@@ -265,6 +267,8 @@ namespace Microsoft.Xna.Framework
 
 				GameControllerNameForIndex = SDL2_FNAPlatform.GameControllerNameForIndex;
 				GameControllerTypeForIndex = SDL2_FNAPlatform.GameControllerTypeForIndex;
+				WrapWindow =			SDL2_FNAPlatform.WrapWindow;
+				UnwrapWindow =			SDL2_FNAPlatform.UnwrapWindow;
 			}
 
 			FNALoggerEXT.Initialize();
@@ -581,6 +585,12 @@ namespace Microsoft.Xna.Framework
 		public delegate int GameControllerTypeForIndexFunc(int deviceIndex);
 		public static readonly GameControllerTypeForIndexFunc GameControllerTypeForIndex;
 
+
+		public delegate IntPtr WrapWindowFunc(IntPtr handle);
+		public static readonly WrapWindowFunc WrapWindow;
+
+		public delegate IntPtr UnwrapWindowFunc(IntPtr handle);
+		public static readonly UnwrapWindowFunc UnwrapWindow;
 
 		#endregion
 
